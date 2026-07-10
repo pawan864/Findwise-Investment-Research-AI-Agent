@@ -17,7 +17,7 @@ export function getChatModel(opts?: { temperature?: number }): BaseChatModel {
       }
 
       return new ChatGoogleGenerativeAI({
-        model: process.env.GOOGLE_MODEL ?? "gemini-2.5-flash",
+        model: process.env.GOOGLE_MODEL ?? "gemini-3.1-flash-lite",
         temperature,
         apiKey: process.env.GOOGLE_API_KEY,
       }) as unknown as BaseChatModel;
