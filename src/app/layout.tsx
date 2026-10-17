@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
-  title: "Research Desk — AI Investment Research Agent",
-  description: "Give it a company name. It researches, reasons, and calls it: invest, pass, or watch.",
+  title: "Findwise — Institutional AI Equity Research Desk",
+  description: "Autonomous equity intelligence. Real-time fundamentals, news synthesis, bull/bear tension modeling, and conviction scoring.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }
